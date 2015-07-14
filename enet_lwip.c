@@ -1,25 +1,23 @@
 //*****************************************************************************
 // enet_lwip.c - Sample WebServer Application using lwIP.
-//
 // Copyright (c) 2013-2014 Texas Instruments Incorporated.  All rights reserved.
 // Software License Agreement
-// 
+//
 // Texas Instruments (TI) is supplying this software for use solely and
 // exclusively on TI's microcontroller products. The software is owned by
 // TI and/or its suppliers, and is protected under applicable copyright
 // laws. You may not combine this software with "viral" open-source
 // software in order to form a larger program.
-// 
+//
 // THIS SOFTWARE IS PROVIDED "AS IS" AND WITH ALL FAULTS.
 // NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, BUT
 // NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
 // A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE. TI SHALL NOT, UNDER ANY
 // CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
 // DAMAGES, FOR ANY REASON WHATSOEVER.
-// 
+//
 // This is part of revision 2.1.0.12573 of the EK-TM4C1294XL Firmware Package.
 //*****************************************************************************
-
 #include <stdbool.h>
 #include <stdint.h>
 #include "inc/hw_ints.h"
@@ -170,6 +168,38 @@ void SysTickIntHandler(void)
 	lwIPTimer(SYSTICKMS);
 }
 
+void udp_echo_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p,
+		struct ip_addr *addr, u16_t port)
+{
+	if (p != NULL)
+	{
+		udp_sendto(pcb, p, IP_ADDR_BROADCAST, 1234); //dest port
+		pbuf_free(p);
+	}
+}
+
+void sendMensage(void *arg, struct udp_pcb *pcb, struct pbuf *p,
+		struct ip_addr *addr, u16_t port)
+{
+	struct ip_addr udpDestIpAddr;
+
+	if (p != NULL)
+	{
+		IP4_ADDR(&udpDestIpAddr, 192, 168, 8, 101);
+		udp_sendto(pcb, p, &udpDestIpAddr, 7090);
+		pbuf_free(p);
+	}
+}
+
+
+void udpsend()
+{
+//	pcb = udp_new();
+//	udp_bind(pcb, IP_ADDR_ANY, port);
+//	udp_connect(pcb, &pc_ipaddr, pc_port);
+//	udp_send(pcb,p->payload);
+}
+
 //*****************************************************************************
 // This example demonstrates the use of the Ethernet Controller.
 //*****************************************************************************
@@ -240,7 +270,7 @@ int main(void)
 	pui8MACArray[5] = ((ui32User1 >> 16) & 0xff);
 
 	// Initialize the lwIP library, using DHCP.
-	lwIPInit(g_ui32SysClock, pui8MACArray, 0, 0, 0, IPADDR_USE_DHCP);
+	lwIPInit(g_ui32SysClock, pui8MACArray, 0, 0, 0, IPADDR_USE_STATIC);
 
 	// Setup the device locator service.
 	LocatorInit();

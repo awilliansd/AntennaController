@@ -44,11 +44,6 @@ utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/a
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/api/tcpip.c
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/def.c
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/dhcp.c
-utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dhcp.h
-utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/ipv4/lwip/autoip.h
-utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/netif/etharp.h
-utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dns.h
-utils/lwiplib.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/dns.c
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/init.c
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/init.h
@@ -57,7 +52,10 @@ utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/i
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/snmp_msg.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/snmp.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/snmp_structs.h
+utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/ipv4/lwip/autoip.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/ipv4/lwip/igmp.h
+utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dns.h
+utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/netif/etharp.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/mem.c
 utils/lwiplib.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/memp.c
@@ -84,11 +82,10 @@ utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/i
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/tcp_out.c
 utils/lwiplib.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/timers.c
+utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dhcp.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/udp.c
 utils/lwiplib.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/ipv4/autoip.c
-utils/lwiplib.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdlib.h
-utils/lwiplib.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/ipv4/icmp.c
 utils/lwiplib.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h
 utils/lwiplib.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/ipv4/igmp.c
@@ -183,11 +180,6 @@ D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/api/sockets.c:
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/api/tcpip.c: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/def.c: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/dhcp.c: 
-D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dhcp.h: 
-D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/ipv4/lwip/autoip.h: 
-D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/netif/etharp.h: 
-D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dns.h: 
-D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/dns.c: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/init.c: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/init.h: 
@@ -196,7 +188,10 @@ D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/raw.h:
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/snmp_msg.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/snmp.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/snmp_structs.h: 
+D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/ipv4/lwip/autoip.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/ipv4/lwip/igmp.h: 
+D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dns.h: 
+D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/netif/etharp.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/mem.c: 
 D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/memp.c: 
@@ -223,11 +218,10 @@ D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/ipv4/lwip/in
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/tcp_out.c: 
 D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/timers.c: 
+D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/include/lwip/dhcp.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/udp.c: 
 D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/ipv4/autoip.c: 
-D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdlib.h: 
-D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/ipv4/icmp.c: 
 D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/string.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/src/core/ipv4/igmp.c: 
