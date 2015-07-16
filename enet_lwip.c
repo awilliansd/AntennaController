@@ -168,16 +168,6 @@ void SysTickIntHandler(void)
 	lwIPTimer(SYSTICKMS);
 }
 
-void udp_echo_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p,
-		struct ip_addr *addr, u16_t port)
-{
-	if (p != NULL)
-	{
-		udp_sendto(pcb, p, IP_ADDR_BROADCAST, 1234); //dest port
-		pbuf_free(p);
-	}
-}
-
 void sendMensage(void *arg, struct udp_pcb *pcb, struct pbuf *p,
 		struct ip_addr *addr, u16_t port)
 {
@@ -191,13 +181,25 @@ void sendMensage(void *arg, struct udp_pcb *pcb, struct pbuf *p,
 	}
 }
 
+//void sendMensage(struct udp_pcb *pcb, struct pbuf *p, struct ip_addr *addr, u16_t port)
+//{
+//	struct ip_addr udpDestIpAddr;
+//
+//	if (p != NULL)
+//	{
+//		IP4_ADDR(&udpDestIpAddr, 192, 168, 8, 101);
+//		udp_sendto(pcb, p, &udpDestIpAddr, 7090);
+//		pbuf_free(p);
+//	}
+//}
 
-void udpsend()
+void udp_echo_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, struct ip_addr *addr, u16_t port)
 {
-//	pcb = udp_new();
-//	udp_bind(pcb, IP_ADDR_ANY, port);
-//	udp_connect(pcb, &pc_ipaddr, pc_port);
-//	udp_send(pcb,p->payload);
+	if (p != NULL)
+	{
+		udp_sendto(pcb, p, IP_ADDR_BROADCAST, 1234); //dest port
+		pbuf_free(p);
+	}
 }
 
 //*****************************************************************************
@@ -245,12 +247,14 @@ int main(void)
 	// incoming packets.  The MAC address will be stored in the non-volatile
 	// USER0 and USER1 registers.
 	MAP_FlashUserGet(&ui32User0, &ui32User1);
+
 	if ((ui32User0 == 0xffffffff) || (ui32User1 == 0xffffffff))
 	{
 		// We should never get here.  This is an error if the MAC address has
 		// not been programmed into the device.  Exit the program.
 		// Let the user know there is no MAC address
 		UARTprintf("No MAC programmed!\n");
+
 		while (1)
 		{
 		}
@@ -280,6 +284,21 @@ int main(void)
 	// Initialize a sample httpd server.
 	httpd_init();
 
+	// Start UDP
+	struct udp_pcb *ptel_pcb;
+	char msg[] = "testing";
+	struct pbuf *p;
+	ip_addr_t udpDestIpAddr;
+
+	IP4_ADDR(&udpDestIpAddr, 192, 168, 8, 101);
+
+	ptel_pcb = udp_new();
+
+	udp_bind(ptel_pcb, IP_ADDR_ANY, 7090);
+	udp_recv(ptel_pcb, udp_echo_recv, NULL);
+
+	//sendMensage(pcb, p, &udpDestIpAddr, 7090);
+
 	// Set the interrupt priorities.  We set the SysTick interrupt to a higher
 	// priority than the Ethernet interrupt to ensure that the file system
 	// tick is processed if SysTick occurs while the Ethernet handler is being
@@ -291,5 +310,10 @@ int main(void)
 	// Loop forever.  All the work is done in interrupt handlers.
 	while (1)
 	{
+		//Allocate packet buffer
+		p = pbuf_alloc(PBUF_TRANSPORT, sizeof(msg), PBUF_RAM);
+		memcpy(p->payload, msg, sizeof(msg));
+		udp_sendto(ptel_pcb, p, IP_ADDR_BROADCAST, 7090);
+		pbuf_free(p); //De-allocate packet buffer
 	}
 }
