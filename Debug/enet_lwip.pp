@@ -49,6 +49,7 @@ enet_lwip.obj: D:/Desenvolvimento/tiva-c-master/utils/uartstdio.h
 enet_lwip.obj: D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h
 enet_lwip.obj: D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/apps/httpserver_raw/httpd.h
 enet_lwip.obj: D:/Desenvolvimento/tiva-c-master/boards/ek-tm4c1294xl/drivers/pinout.h
+enet_lwip.obj: ../defines.h
 
 ../enet_lwip.c: 
 D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdbool.h: 
@@ -99,3 +100,4 @@ D:/Desenvolvimento/tiva-c-master/utils/uartstdio.h:
 D:/Desenvolvimento/TI/ccsv6/tools/compiler/ti-cgt-arm_5.2.2/include/stdarg.h: 
 D:/Desenvolvimento/tiva-c-master/third_party/lwip-1.4.1/apps/httpserver_raw/httpd.h: 
 D:/Desenvolvimento/tiva-c-master/boards/ek-tm4c1294xl/drivers/pinout.h: 
+../defines.h: 

@@ -34,6 +34,7 @@
 #include "utils/uartstdio.h"
 #include "httpserver_raw/httpd.h"
 #include "drivers/pinout.h"
+#include "defines.h"
 
 //*****************************************************************************
 //! \addtogroup example_list
@@ -181,19 +182,8 @@ void sendMensage(void *arg, struct udp_pcb *pcb, struct pbuf *p,
 	}
 }
 
-//void sendMensage(struct udp_pcb *pcb, struct pbuf *p, struct ip_addr *addr, u16_t port)
-//{
-//	struct ip_addr udpDestIpAddr;
-//
-//	if (p != NULL)
-//	{
-//		IP4_ADDR(&udpDestIpAddr, 192, 168, 8, 101);
-//		udp_sendto(pcb, p, &udpDestIpAddr, 7090);
-//		pbuf_free(p);
-//	}
-//}
-
-void udp_echo_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p, struct ip_addr *addr, u16_t port)
+void udp_echo_recv(void *arg, struct udp_pcb *pcb, struct pbuf *p,
+		struct ip_addr *addr, u16_t port)
 {
 	if (p != NULL)
 	{
@@ -297,8 +287,6 @@ int main(void)
 	udp_bind(ptel_pcb, IP_ADDR_ANY, 7090);
 	udp_recv(ptel_pcb, udp_echo_recv, NULL);
 
-	//sendMensage(pcb, p, &udpDestIpAddr, 7090);
-
 	// Set the interrupt priorities.  We set the SysTick interrupt to a higher
 	// priority than the Ethernet interrupt to ensure that the file system
 	// tick is processed if SysTick occurs while the Ethernet handler is being
@@ -311,8 +299,8 @@ int main(void)
 	while (1)
 	{
 		//Allocate packet buffer
-		p = pbuf_alloc(PBUF_TRANSPORT, sizeof(msg), PBUF_RAM);
-		memcpy(p->payload, msg, sizeof(msg));
+		p = pbuf_alloc(PBUF_TRANSPORT, sizeof(buf1), PBUF_RAM);
+		memcpy(p->payload, buf1, sizeof(buf1));
 		udp_sendto(ptel_pcb, p, IP_ADDR_BROADCAST, 7090);
 		pbuf_free(p); //De-allocate packet buffer
 	}
